@@ -1,0 +1,43 @@
+Faithfulness:
+
+User Input: Create a website content for automobile dealer
+
+LLM Output:
+This car has nice Brakes
+The aerodynamics of this car is really good
+This is a sports car
+The pricing of this car is 10 lakh rupees in INR
+
+Retrieved Context:
+The brakes of this car is really nice
+Aerodynamcis of this car is top in the class
+This is used by sports enthusiasts
+This comes under sub-15 lakhs category
+
+
+Answer Relevancy:
+
+Create a website content for gold dealer
+
+LLM Output:
+
+India won the 2026 world cup gold medal
+Gold is one of the costliest minerals
+1 gram of gold costs more than Rs. 10000
+
+Contextual Precision:
+
+Input:
+
+Create a website content for gold dealer
+
+Expected Output:
+
+Gold is one of the costliest minerals
+1 gram of gold costs more than Rs. 10000
+
+Retrieved from RAG:
+
+India won the 2026 world cup gold medal
+Gold is one of the rare metals
+Cost is on the higher side right now
