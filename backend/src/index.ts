@@ -43,7 +43,7 @@ app.get("/health", (req: Request, res: Response) => {
     providers: {
       deepeval: {
         status: "active",
-        metrics: ["faithfulness", "answer_relevancy", "contextual_precision", "contextual_recall", "pii_leakage", "bias", "hallucination"],
+        metrics: ["faithfulness", "answer_relevancy", "contextual_precision", "contextual_recall", "pii_leakage", "bias", "hallucination", "ragas"],
         endpoint: "/api/eval-only"
       }
     },
@@ -66,7 +66,7 @@ app.get("/api/status", (req: Request, res: Response) => {
     providers: {
       deepeval: {
         status: "configured",
-        metrics: ["faithfulness", "answer_relevancy", "contextual_precision", "contextual_recall", "pii_leakage", "bias", "hallucination"]
+        metrics: ["faithfulness", "answer_relevancy", "contextual_precision", "contextual_recall", "pii_leakage", "bias", "hallucination", "ragas"]
       }
     },
     endpoints: {

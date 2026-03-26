@@ -653,6 +653,18 @@
   line-height: 1.6;
   color: var(--tl-text);
   margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.llm-eval-response-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.llm-eval-response-text-line {
+  margin: 0;
 }
 
 .llm-eval-response-reference {

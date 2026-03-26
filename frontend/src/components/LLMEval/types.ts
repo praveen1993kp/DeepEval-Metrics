@@ -7,6 +7,7 @@
  * - pii_leakage: Detects personally identifiable information in output
  * - bias: Detects bias in LLM outputs
  * - hallucination: Detects hallucinations in LLM outputs by comparing with context
+ * - ragas: Composite RAG metric (faithfulness + contextual precision + contextual recall)
  */
 export type MetricOption =
   | 'faithfulness'
@@ -15,7 +16,8 @@ export type MetricOption =
   | 'contextual_recall'
   | 'pii_leakage'
   | 'bias'
-  | 'hallucination';
+  | 'hallucination'
+  | 'ragas';
 
 /**
  * Form state for LLM evaluation (DeepEval provider)

@@ -41,6 +41,14 @@ export const ResponsePanel: React.FC<ResponsePanelProps> = ({ response, isLoadin
       .replace(/_/g, ' ');
     
     const explanation = response.explanation || null;
+    const explanationLines = explanation
+      ? explanation
+          .replace(/\r\n/g, '\n')
+          .replace(/\s*\|\s*/g, '\n')
+          .split('\n')
+          .map((line) => line.trim())
+          .filter((line) => line.length > 0)
+      : [];
     
     // Use verdict from server (don't override with PASS/FAIL)
     let verdict = response.verdict || null;
@@ -124,7 +132,17 @@ export const ResponsePanel: React.FC<ResponsePanelProps> = ({ response, isLoadin
           {explanation && (
             <div className="llm-eval-response-section">
               <h4 className="llm-eval-response-section-title">Explanation</h4>
-              <p className="llm-eval-response-text">{explanation}</p>
+              {explanationLines.length > 1 ? (
+                <div className="llm-eval-response-lines">
+                  {explanationLines.map((line, index) => (
+                    <p key={`${index}-${line.slice(0, 20)}`} className="llm-eval-response-text llm-eval-response-text-line">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <p className="llm-eval-response-text">{explanation}</p>
+              )}
             </div>
           )}
 

@@ -65,6 +65,13 @@ const METRICS_CONFIG: Record<string, MetricConfig> = {
     requiredFields: ['output', 'context'],
     optionalFields: ['query'],
   },
+  ragas: {
+    name: 'ragas',
+    label: '🧠 RAGAS',
+    description: 'Composite RAG metric combining faithfulness, contextual precision, and contextual recall',
+    requiredFields: ['query', 'output', 'context', 'expected_output'],
+    optionalFields: [],
+  },
 };
 
 const AVAILABLE_METRICS = Object.keys(METRICS_CONFIG);
